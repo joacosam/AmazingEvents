@@ -3,16 +3,112 @@
     padding: 0;
     margin: 0;
 }
-
-header {
-display: flex;
+body {
+height: 100vh;
 }
+/* HEADER */
 
-#logo {
-height: 3rem;
-}
-
-nav a {
+nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    height: 10vh;
+    padding-left: 2em;
+    padding-right: 2em;
     display: flex;
-text-decoration: none;
-padding: 10px;}
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+#logo {
+        height: 3rem;
+}
+nav>ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+}
+    nav>ul>li>a {
+        border-radius: 5px;
+        padding: 0.2em;
+        background-color: rgb(152, 43, 152);
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+    }
+    
+
+    .slide {display: flex;
+        justify-content: space-between;
+        height: 15vh;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        color: black;
+        background: linear-gradient(90deg, rgb(104, 4, 104), white);
+        align-items: center;
+    }
+    .slide a {
+    scale: 2;
+}
+
+    main {
+    min-height: 65vh;
+}
+
+.search {
+display: flex;
+justify-content: space-between;
+padding: 1em;
+}
+
+.search fieldset {
+border: none;
+display: flex;
+gap: 1em;
+}
+
+.search fieldset label input {
+    margin-left: 0.3em;
+
+}
+
+
+.card {
+display: flex;
+justify-content: center;
+gap: 3em;
+flex-wrap: wrap;
+padding: 2rem;
+}
+
+.card1 {
+display: flex;
+gap: 4rem;
+}
+
+.card section {
+background-color: rgb(104, 4, 104);
+padding: 1em;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1em;
+width: 15em;
+}
+
+.card section img {
+max-width: 100%;
+object-fit: cover;
+height: 12em;
+}
+
+footer {
+height: 10vh;}
+
+
+
+
+
+
+ /* background: radial-gradient(rgb(4, 95, 4), white); */
