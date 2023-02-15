@@ -1,14 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://kit.fontawesome.com/790c491f2b.js" crossorigin="anonymous"></script>
     <title>Amazing Events</title>
 </head>
+
 <body>
-    
+    <header>
+        <nav>
+            <div>
+                <a href="./index.html">
+                    <img id="logo" src="../assets/img/LogoAmazingEvents.png" alt="logo">
+                </a>
+            </div>
+            <ul>
+                <li> <a href="#">Home</a></li>
+                <li> <a href="./pages/upcomingevents.html"> Upcoming Events</a></li>
+                <li> <a href="./pages/pastevents.html"> Past Events</a></li>
+                <li> <a href="./pages/contacts.html"> Contacts</a></li>
+                <li> <a href="./pages/stats.html"> Stats</a></li>
+            </ul>
+        </nav>
+        <div class="slide">
+            <a href="./upcomingevents.html">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <h1>Past Events</h1>
+            <a href="./contacts.html">
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div>
+            <form class="search" action="nothing">
+                <fieldset>
+                    <input type="checkbox" id="category1" name="category1" value="Category">
+                    <label for="category1"> Category </label>
+                    <input type="checkbox" id="category2" name="category2" value="Category">
+                    <label for="category2"> Category </label>
+                    <input type="checkbox" id="category3" name="category3" value="Category">
+                    <label for="category3"> Category </label>
+                    <input type="checkbox" id="category4" name="category4" value="Category">
+                    <label for="category4"> Category </label>
+                </fieldset>
+                <fieldset>
+                    <input type="search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="card">
+            <section>
+                <img src="../assets/img/Marathon.jpg" alt="marathon">
+                <h3>Titulo</h3>
+                <h5>texto</h5>
+                <div class="card1">
+                    <p>Price $11111</p>
+                    <button>Buy</button>
+                </div>
+            </section>
+            <section>
+                <img src="../assets/img/Cinema.jpg" alt="cinema">
+                <h3>Titulo</h3>
+                <h5>texto</h5>
+                <div class="card1">
+                    <p>Price $11111</p>
+                    <button>Buy</button>
+                </div>
+            </section>
+            <section>
+                <img src="../assets/img/Costume_Party.jpg" alt="costume">
+                <h3>Titulo</h3>
+                <h5>texto</h5>
+                <div class="card1">
+                    <p>Price $11111</p>
+                    <button>Buy</button>
+                </div>
+            </section>
+            <section>
+                <img src="../assets/img/Food_Fair.jpg" alt="food">
+                <h3>Titulo</h3>
+                <h5>texto</h5>
+                <div class="card1">
+                    <p>Price $11111</p>
+                    <button>Buy</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div class="ancors">
+                <div class="botones">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <div class="cohort">
+                    <h2>FE06-TN</h2>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
 </html>

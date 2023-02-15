@@ -128,7 +128,48 @@ color: black;
 }
 button {
 cursor: pointer;
+width: 4em;
 }
+
+.fa-solid {
+color: black;
+}
+
+.contact {
+display: flex;
+justify-content: center;
+padding: 2em;
+}
+
+.fcontact {
+border: none;
+font-size: 1.5em;
+}
+.fcontact input {
+width: 30em;
+height: 2em;
+}
+
+textarea {
+resize: none;
+}
+
+td, th {
+border: solid 1px;
+height: 2em;
+min-width: 15em;
+padding: 0.5em;
+}
+
+.stats {
+display: flex;
+justify-content: center;
+}
+
+table {
+border-spacing: 0;
+}
+
 
 
 
