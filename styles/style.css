@@ -12,7 +12,7 @@ nav {
     /* position: sticky; */
     top: 0;
     background: white;
-    height: 10vh;
+    min-height: 10vh;
     padding-left: 2em;
     padding-right: 2em;
     display: flex;
@@ -23,6 +23,9 @@ nav {
 }
 #logo {
         height: 3rem;
+}
+nav>input, nav>i{
+    display: none !important;
 }
 nav>ul {
     display: flex;
@@ -160,6 +163,16 @@ textarea {
 resize: none;
 }
 
+.stats {
+    display: flex;
+    justify-content: center;
+    }
+
+table {
+    border-spacing: 0;
+    padding: 2em;
+    }
+
 td, th {
 border: solid 1px;
 height: 2em;
@@ -167,18 +180,8 @@ min-width: 15em;
 padding: 0.5em;
 }
 
-.stats {
-display: flex;
-justify-content: center;
-}
-
-table {
-border-spacing: 0;
-padding: 2em;
-}
-
 th {
-background-color: ;  background: linear-gradient(90deg, rgb(104, 4, 104), white);
+background: linear-gradient(90deg, rgb(104, 4, 104), white);
 }
 
 
@@ -196,32 +199,51 @@ section p {
 
 @media screen and (max-width:870px) {
     nav {
-        display: none;
+        align-items: flex-start;
     }
+    nav > ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    nav ul li a{
+        background-color: transparent;
+    }
+    nav input, nav i {
+        position: absolute;
+        scale: 3;
+        top: 1em;
+        right: 1em;
+        cursor: pointer;
+        opacity: 0;
+        display: block !important;
+    }
+    nav input {
+        z-index: 1;
+    }
+    nav > input:not(checked) + ul {
+    display: none;
+    }
+    nav > input:checked + ul {
+        display: flex;
+    }
+    nav > input:not(checked) ~ .fa-bars, nav > input:checked ~ .fa-x  {
+        opacity: 1;
+        }
+    nav > input:not(checked) ~ .fa-x, nav > input:checked ~ .fa-bars {
+            opacity: 0;
+        }
+    table{
+        padding: 0.1em;
+    }
+    td, th {
+        border: solid 1px;
+        height: 2em;
+        min-width: 0em;
+        padding: 0.1em;
+        }
 }
 
-@media screen and (max-width:745px) {
-    table {
-    scale: 0.8;
-    }
-}
 
-@media screen and (max-width:600px) {
-    table {
-    scale: 0.7;
-    }
-}
-
-@media screen and (max-width:520px) {
-    table {
-    scale: 0.6;
-    }
-}
-@media screen and (max-width:450px) {
-    table {
-    scale: 0.5;
-    }
-}
 @media screen and (max-width:400px) {
     .contact {
     scale: 0.8;
