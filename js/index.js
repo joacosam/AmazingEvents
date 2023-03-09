@@ -14,8 +14,8 @@ function insertarCards(array, container){
     <h3>${evento.name}</h3>
     <h5>${evento.category}</h5>
     <div class="card1">
-      <p>Price $11111</p>
-      <button class="vermas">More info</button>
+      <p>$${evento.price},00</p>
+      <a href="/pages/details.html?id=${evento._id}"><button class="vermas">More info</button></a>
     </div>
   </section> `
   fragment.appendChild(div)
