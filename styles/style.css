@@ -56,7 +56,7 @@ nav>ul {
 }
 
     main {
-    min-height: 65vh;
+    min-height: 80vh;
 }
 
 .search {
@@ -212,7 +212,7 @@ section p {
     display: flex;
     justify-content: center;
     gap: 1em;
-    background-color: violet;
+    background: linear-gradient(90deg, rgb(104, 4, 104), white);
     margin: 1em;
     padding: 1em;
     border-radius: 5px;
