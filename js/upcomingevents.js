@@ -1,13 +1,41 @@
-import data from "./data.js";
-
+let apiUrl = '../js/amazing.json'
 const fragment = document.createDocumentFragment();
 const $container = document.getElementById("container");
-const upcoming = data.events.filter(elemento => elemento.date > data.currentDate)
+const $checkbox = document.getElementById("checkbox");
+let arrayFiltrado = []
+let arrayFiltrado2 = []
+const $search = document.querySelector("input[type=search]");
+let data = []
+fetch(apiUrl)
+.then(
+  res => res.json()
+  )
+  .then(
+    info => {
+      data = info;
+      arrayFiltrado = data.events.filter(e => e.estimate)
+      arrayFiltrado2 = arrayFiltrado 
+      insertarCards(arrayFiltrado, $container)
+      
+      let categories = arrayFiltrado.map(element => element.category)
+      categories=categories.reduce((acumulador, element) => {
+        if(!acumulador.includes(element)){
+          acumulador.push(element)
+        }
+        return acumulador
+      },[])
+      insertarCheckbox(categories, $checkbox)
+      
+    } 
+  )
+.catch(error => console.log(error))
+
+
 
 function insertarCards(array, container){
   container.innerHTML = "";
-    if (array.length > 0) {
-      for(let evento of array) {
+  if (array.length > 0) {
+    for(let evento of array) {
     let div=document.createElement("div");
     div.className = "card"
     div.innerHTML += `<section>
@@ -15,7 +43,7 @@ function insertarCards(array, container){
     <h3>${evento.name}</h3>
     <h5>${evento.category}</h5>
     <div class="card1">
-      <p>Price $${evento.price},00 </p>
+      <p>$${evento.price},00</p>
       <a href="/pages/details.html?id=${evento._id}"><button class="vermas">More info</button></a>
     </div>
   </section> `
@@ -32,19 +60,6 @@ fragment.appendChild(div)
 container.appendChild(fragment)
 }
 
-insertarCards(upcoming, $container)
-
-
-let categories = data.events.map(element => element.category)
-categories=categories.reduce((acumulador, element) => {
-  if(!acumulador.includes(element)){
-    acumulador.push(element)
-  }
-  return acumulador
-},[])
-
-const $checkbox = document.getElementById("checkbox");
-
 function insertarCheckbox(array, container){
   let text ="";
   array.forEach(element => text +=
@@ -54,10 +69,8 @@ function insertarCheckbox(array, container){
     container.innerHTML = text;
 }
 
-insertarCheckbox(categories, $checkbox)
 // FUNCION PARA FILTRAR POR CATEGORIAS
-let arrayFiltrado = upcoming
-let arrayFiltrado2 = arrayFiltrado
+
 
 function filterCheckbox(array, text){
     let arrayFiltered = array.filter(element => text.toLowerCase().includes(element.category.toLowerCase()))
@@ -71,20 +84,21 @@ if($checkboxChecked.length > 0){
   for (let i = 0; i < $checkboxChecked.length; i++){
     text += $checkboxChecked[i].name
     }
-    arrayFiltrado = filterCheckbox(upcoming, text)
+    arrayFiltrado = filterCheckbox(data.events.filter(e => e.estimate), text)
   } else {
-    arrayFiltrado = upcoming
+    arrayFiltrado = data.events.filter(e => e.estimate)
   }
+  console.log($checkboxChecked)
   arrayFiltrado2 = filterName(arrayFiltrado, $search.value)
   insertarCards(arrayFiltrado2, $container);
 })
 //FUNCION PARA FILTRAR POR BARRA DE BUSQUEDA POR NOMBRE
-  function filterName(array, text) {
+function filterName(array, text) {
   let arrayFiltered = array.filter(element => element.name.toLowerCase().includes(text.toLowerCase()));
     return arrayFiltered
 }
 
-const $search = document.querySelector("input[type=search]");
+
 $search.addEventListener("keyup", function() {
   arrayFiltrado2 = filterName(arrayFiltrado, $search.value)
   insertarCards(arrayFiltrado2, $container)
